@@ -1,3 +1,13 @@
+# coding: utf-8
+
+
 from django.contrib import admin
 
-# Register your models here.
+from .models import HelloText
+
+
+class HelloTextAdmin(admin.ModelAdmin):
+    list_display = ['id', 'text', ]
+
+
+admin.site.register(HelloText, HelloTextAdmin)

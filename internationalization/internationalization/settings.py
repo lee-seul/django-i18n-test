@@ -71,6 +71,19 @@ TEMPLATES = [
     },
 ]
 
+
+from django.utils.translation import gettext_lazy as _
+LANGUAGES = [
+    ('kr', _('Korean')),
+    ('en', _('English')),
+    ('jp', _('Japaness')),
+]
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
+
 WSGI_APPLICATION = 'internationalization.wsgi.application'
 
 
