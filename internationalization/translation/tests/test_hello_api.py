@@ -14,7 +14,14 @@ class TestHelloAPI(APITestCase):
             'HTTP_ACCEPT_LANGUAGE': 'kr'
         }
 
+        # 한국어 테스트
         response = self.client.get(url, headers={}, **headers)
         data = response.json()
 
         self.assertEqual(data['result'], '테스트')
+
+        # english 
+        response = self.client.get(url)
+        data = response.json()
+
+        self.assertEqual(data['result'], 'Test')
