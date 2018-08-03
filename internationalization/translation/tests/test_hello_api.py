@@ -11,10 +11,10 @@ class TestHelloAPI(APITestCase):
         url = reverse('translation:hello')
 
         headers = {
-            'Accept-Language': 'kr'
+            'HTTP_ACCEPT_LANGUAGE': 'kr'
         }
 
-        response = self.client.get(url, headers=headers)
+        response = self.client.get(url, headers={}, **headers)
         data = response.json()
 
         self.assertEqual(data['result'], '테스트')
